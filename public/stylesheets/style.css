@@ -4,9 +4,39 @@ body {
 }
 
 a {
-  color: #00b7ff;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 20px;
+  border: solid lightblue;
+  background-color: lightblue;
+  border-radius: 20px;
 }
 
-h1 {
-  color: 15px;
+
+
+#signUp{
+  display: flex;
+  margin-left: 80%;
+  justify-content: space-between;
+}
+
+
+#landingPage{
+  background-image: url("/images/pexels-porapak-apichodilok-346885.jpg");
+  background-size: 100%;
+}
+
+.landingHeader{
+  font-size: 35px;
+  font-family:sans-serif;
+  font-weight: 500;
+  color: rgb(226, 34, 34);
+}
+
+#landingHeaderDiv{
+  display: flex;
+  flex-direction: column;
+  line-height: 2px;
+  
 }
