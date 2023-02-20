@@ -1,1 +1,17 @@
-<h2>edit-profile</h2>
+
+<h2>Edit Profile</h2>
+
+<form action="/users/{{_id}}/edit-profile" method="post">
+
+  <label for="email">New Email: </label>
+  <input type="email" name="email" id="email" value="{{email}}" />
+
+  <label for="username">New Username: </label>
+  <input type="text" name="username" id="username" value="{{username}}" />
+
+  <label for="password">New Password: </label>
+  <input type="password" name="password" id="password"">
+  </textarea>
+
+  <button type="Edit">Edit</button>
+</form>
