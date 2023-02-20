@@ -1,6 +1,9 @@
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("/images/pexels-francesco-ungaro-281260.jpg");
+  background-size: 100%;
+  color: white;
 }
 
 a {
@@ -38,5 +41,4 @@ a {
   display: flex;
   flex-direction: column;
   line-height: 2px;
-  
 }
