@@ -21,11 +21,11 @@ const userSchema = new Schema(
       required: true,
     },
     image: {
-      type: Image,
+      type: String,
       required: true,
     },
     friends: {
-      type: [FriendId],
+      type: [String],
     },
     progressInSessions: {
       type: Number,
@@ -34,7 +34,7 @@ const userSchema = new Schema(
       type: Number,
     },
     languages: {
-      type: [languageId],
+      type: [String],
     },
   },
   {
