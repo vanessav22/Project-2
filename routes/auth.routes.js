@@ -15,6 +15,11 @@ const User = require("../models/User.model");
 const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 
+// GET /auth/homepage
+router.get("/homepage", isLoggedIn, (req, res) => {
+  res.render("auth/homepage");
+});
+
 // GET /auth/signup
 router.get("/signup", isLoggedOut, (req, res) => {
   res.render("auth/signup");
@@ -42,6 +47,11 @@ router.post("/signup", isLoggedOut, (req, res) => {
     return;
   }
 
+<<<<<<< HEAD
+=======
+  //   ! This regular expression checks password for special characters and minimum length
+  
+>>>>>>> 9b7de45265a6e3da2fcb154171147414633f4604
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
     res
@@ -51,6 +61,10 @@ router.post("/signup", isLoggedOut, (req, res) => {
     });
     return;
   }
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 9b7de45265a6e3da2fcb154171147414633f4604
 
   // Create a new user - start by hashing the password
   bcrypt
@@ -98,9 +112,9 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
   // Here we use the same logic as above
   // - either length based parameters or we check the strength of a password
-  if (password.length < 6) {
+  if (password.length < 8) {
     return res.status(400).render("auth/login", {
-      errorMessage: "Your password needs to be at least 6 characters long.",
+      errorMessage: "Your password needs to be at least 8 characters long.",
     });
   }
 
@@ -149,5 +163,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
+
+
 
 module.exports = router;
