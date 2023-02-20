@@ -20,6 +20,22 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: Image,
+      required: true,
+    },
+    friends: {
+      type: [FriendId],
+    },
+    progressInSessions: {
+      type: Number,
+    },
+    progressInXP: {
+      type: Number,
+    },
+    languages: {
+      type: [languageId],
+    },
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
