@@ -2,20 +2,68 @@
   <h2>Log In</h2>
   <form action="/auth/login" method="POST">
 
-    <label> Username
+    <!--<label> Username
       <input type="text" name="username" placeholder="Your username" />
     </label>
-
     <label> Email
       <input type="email" name="email" placeholder="Your email" />
     </label>
-
     <label> Password
       <input type="password" name="password" placeholder="Your password" />
     </label>
+    <button type="submit">Log In</button>-->
+    <br /><br />
+    <form class="row g-3 needs-validation" novalidate>
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Email</label>
+        <div class="input-group has-validation">
+          <span class="input-group-text" id="inputGroupPrepend">@</span>
+          <input
+            type="text"
+            class="form-control"
+            id="validationCustomUsername"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+          <div class="invalid-feedback">
+            Please write your email!
+          </div>
+        </div>
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+        />
+        <div class="valid-feedback">
+          Looks good!
+        </div>
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          id="validationCustom01"
+          value="Mark"
+          required
+        />
+        <div class="valid-feedback">
+          XXX
+        </div>
+      </div>
+      <br /><br />
 
-    <button type="submit">Log In</button>
-
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+    </form>
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
