@@ -6,8 +6,15 @@ const User = require("../models/User.model");
 
 
 
-router.get("/dashboard", isLoggedIn, (req, res) => {
-  res.render("users/dashboard");
+router.get("/:id/dashboard", isLoggedIn, async (req, res) => {
+  try {
+    const { id } = req.params;
+    const user = await User.findById(id);
+    res.render("users/dashboard", {user});
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
 });
 
 router.get("/:id/profile", isLoggedIn, async (req, res) => {
@@ -36,7 +43,7 @@ router.get("/:id/edit-profile", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
-    res.render("users/edit-profile", user);
+    res.render("users/edit-profile", {user});
   } catch (error) {
     console.log(error);
     next(error);
@@ -48,7 +55,7 @@ router.get("/:id/friends", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
-    res.render("users/friends", user);
+    res.render("users/friends", { user });
   } catch (error) {
     console.log(error);
     next(error);
@@ -60,7 +67,7 @@ router.get("/:id/progress", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const user =  await User.findById(id);
-    res.render("users/progress", user);
+    res.render("users/progress", { user });
   } catch (error) {
     console.log(error)
     next(error)
