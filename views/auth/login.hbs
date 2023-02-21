@@ -1,66 +1,57 @@
 <div id="login-form">
   <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
-
-    <!--<label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-    <button type="submit">Log In</button>-->
+  <br /><br />
+  <form
+    action="/auth/login"
+    method="POST"
+    class="row g-3 needs-validation"
+    novalidate
+  >
+    <div class="col-md-4">
+      <label for="validationCustomUsername" class="form-label">Email: </label>
+      <input
+        type="email"
+        name="email"
+        class="form-control"
+        id="validationCustomUsername"
+        aria-describedby="inputGroupPrepend"
+        required
+      />
+    </div>
     <br /><br />
-    <form class="row g-3 needs-validation" novalidate>
-      <div class="col-md-4">
-        <label for="validationCustomUsername" class="form-label">Email</label>
-        <div class="input-group has-validation">
-          <span class="input-group-text" id="inputGroupPrepend">@</span>
-          <input
-            type="email"
-            name="email"
-            class="form-control"
-            id="validationCustomUsername"
-            aria-describedby="inputGroupPrepend"
-            required
-          />
-        </div>
-      </div>
-      <br /><br />
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Username</label>
-        <input
-          type="text"
-          name="username"
-          class="form-control"
-          id="validationCustom01"
-          required
-        />
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Username: </label>
+      <input
+        type="text"
+        name="username"
+        class="form-control"
+        id="validationCustom01"
+        required
+      />
 
-      </div>
-      <br /><br />
-      <div class="col-md-4">
-        <label for="validationCustom01" class="form-label">Password</label>
-        <input
-          type="password"
-          name="password"
-          class="form-control"
-          id="validationCustom01"
-          value="Mark"
-          required
-        />
-      </div>
-      <br /><br />
-
-      <div class="col-12">
-        <button class="btn btn-primary" type="submit">Submit form</button>
-      </div>
-    </form>
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+    </div>
+    <br /><br />
+    <div class="col-md-4">
+      <label for="validationCustom01" class="form-label">Password: </label>
+      <input
+        type="password"
+        name="password"
+        class="form-control"
+        id="validationCustom01"
+        value=""
+        required
+      />
+       <br /><br />
+       <div class="col-12">
+      <button class="btn btn-primary Submit" type="submit">Submit</button>
+    </div>
   </form>
+  </div>
+    </div>
+    <br /><br />
+
+
+  {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
 </div>

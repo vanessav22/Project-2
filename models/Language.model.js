@@ -7,10 +7,6 @@ const languageSchema = new Schema(
       type: String,
       required: true,
     },
-    image: {
-        type: String,
-        required: true,
-      },
     users: [
       {
         type: Schema.Types.ObjectId,

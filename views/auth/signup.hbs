@@ -1,24 +1,62 @@
-<div id="form">
+<div id="form"  id="signup-form">
   <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+<form  action="/auth/signup" method="POST" class="row g-3 needs-validation" id="signup-form" >
+      <div class="col-md-4">
+        <label for="validationCustomUsername" class="form-label">Email: </label>
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="validationCustomUsername"
+            aria-describedby="inputGroupPrepend"
+            required
+          />
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Username: </label>
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="validationCustom01"
+          required
+        />
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Password: </label>
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="validationCustom01"
+          value=""
+          required
+        />
+      </div>
+      <br /><br />
+<div class="col-md-3">
+    <label for="validationServer04" class="form-label">Native Language: </label>
+      <select name='nativeLanguage'class="form-select is-invalid" id="validationServer04" aria-describedby="validationServer04Feedback" required>
+      <option selected disabled value="">Choose...</option>
+      <option>Portuguese</option>
+      <option>German</option>
+      <option>Turkish</option>
+      <option>Italian</option>
+      <option>French</option>
+      <option>Dutch</option>
+    </select>
+  <br /><br />
+ 
+      <br /><br />
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
-  </form>
-</div>
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+    </form>
+      {{#if errorMessage}}
+    <p class="error">{{errorMessage}}</p>
+  {{/if}}
+      </div>

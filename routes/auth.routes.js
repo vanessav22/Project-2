@@ -5,11 +5,14 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
+
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
 
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
+const Language = require("../models/Language.model");
+const Session = require("../models/Session.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
@@ -22,7 +25,10 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const { username, email, password } = req.body;
+  const {username, email, password, nativeLanguage} = req.body;
+
+/*   let image 
+  if  */
 
   // Check that username, email, and password are provided
   if (username === "" || email === "" || password === "") {
@@ -43,17 +49,15 @@ router.post("/signup", isLoggedOut, (req, res) => {
   }
 
   //   ! This regular expression checks password for special characters and minimum length
-  
+
   const regex = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}/;
   if (!regex.test(password)) {
-    res
-      .status(400)
-      .render("auth/signup", {
-        errorMessage: "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter."
+    res.status(400).render("auth/signup", {
+      errorMessage:
+        "Password needs to have at least 6 chars and must contain at least one number, one lowercase and one uppercase letter.",
     });
     return;
   }
-  
 
   // Create a new user - start by hashing the password
   bcrypt
@@ -61,7 +65,7 @@ router.post("/signup", isLoggedOut, (req, res) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a user and save it in the database
-      return User.create({ username, email, password: hashedPassword });
+      return User.create({ username, email, password: hashedPassword, nativeLanguage });
     })
     .then((user) => {
       res.redirect("/auth/login");
@@ -134,14 +138,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/users/dashboard");
+          res.redirect(`/users/${req.session.currentUser._id}/dashboard`);
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
     .catch((err) => next(err));
 });
 
-router.post("/logout", isLoggedIn, (req, res) => {
+router.get("/logout", isLoggedIn, (req, res) => {
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });
@@ -151,7 +155,5 @@ router.post("/logout", isLoggedIn, (req, res) => {
     res.redirect("/");
   });
 });
-
-
 
 module.exports = router;
