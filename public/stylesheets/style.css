@@ -1,6 +1,7 @@
 * {
   text-decoration: none;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: light;
   font-weight: medium;
   margin-left: 0;
   margin-right: 0;
@@ -148,7 +149,7 @@ svg {
   font-size: 20px;
   width: fit-content;
   color: white;
-    padding: 40px;
+  padding: 40px;
 }
 h4 {
   padding: 0;
@@ -212,7 +213,16 @@ footer {
   cursor: pointer;
 }
 
-#userCards{
-  margin:50px
+#userCards {
+  margin: 50px;
+}
 
+#progressSection {
+  text-align: center;
+  margin: 100px;
+}
+
+#profileSection {
+  text-align: center;
+  margin: 100px;
 }
