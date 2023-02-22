@@ -47,25 +47,24 @@ justify-content: space-evenly;
 }
 
 #login-form {
+  text-align: center;
   color: white;
   font-size: 20px;
   line-height: 10px;
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
 }
 
 #signup-form {
+   text-align: center;
   color: white;
   font-size: 20px;
   line-height: 10px;
-  margin-top: 30px;
-  margin-left: 30px;
+  margin-top: 10%;
   display: flex;
   flex-direction: column;
-  padding-bottom: 20px;
   padding-bottom: 20px;
 }
 
