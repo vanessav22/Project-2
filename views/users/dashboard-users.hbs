@@ -2,6 +2,7 @@
   <div class="container-fluid">
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
+        <a class="nav-link" href="dashboard">Home</a>
         <a class="nav-link" href="friends">Friends</a>
         <a class="nav-link" href="progress">Progress</a>
         <a class="nav-link" href="profile">Profile</a>
@@ -14,6 +15,7 @@
   </div>
 </nav>
 
+<section id="userCards">
 {{#each users}}
   <div class="card">
   <a href="/session/{{_id}}/start-session"><div class="card-img"></div></a>
@@ -29,5 +31,5 @@
 
 </div>
 
-
+</section>
 

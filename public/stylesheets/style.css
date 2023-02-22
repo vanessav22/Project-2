@@ -69,11 +69,6 @@ body {
   padding-bottom: 20px;
 }
 
-/*.Submit {
-  display: flex;
-  align-content: center;
-}*/
-
 .card {
   width: 190px;
   height: 254px;
@@ -148,11 +143,12 @@ svg {
 #languageNav {
   margin-top: 60px;
   line-height: 50px;
-  justify-content: space-between;
+  justify-content: space-around;
   text-decoration: none;
   font-size: 20px;
   width: fit-content;
   color: white;
+    padding: 40px;
 }
 h4 {
   padding: 0;
@@ -163,7 +159,7 @@ h4 {
 }
 
 #dashboardLanguages {
-  justify-content: space-between;
+  justify-content: space-around;
   background-color: rgb(255, 255, 255);
   text-align: center;
   width: 400px;
@@ -171,9 +167,7 @@ h4 {
   margin-top: 300px;
   margin-left: 35%;
   border-radius: 12px;
-  padding-left: 20px;
-  padding-top: 0;
-  padding-bottom: 30px;
+  padding: 40px;
 }
 
 a {
@@ -181,15 +175,13 @@ a {
   font-weight: normal;
 }
 .navbar-nav {
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: 0;
   align-items: center;
   font-size: 20px;
   display: flex;
   background-color: whitesmoke;
   height: 60px;
-  padding-left: 20px;
-  padding-right: 20px;
 }
 
 footer {
@@ -207,7 +199,8 @@ footer {
   color: rgb(43, 43, 43);
   font-size: 20px;
   font-weight: normal;
-  width: 120px;
+  padding-left: 120px;
+  width: 190px;
   margin-top: 22px;
   text-decoration: none;
   background-color: whitesmoke;
@@ -217,4 +210,9 @@ footer {
 
 .logoutButton:hover {
   cursor: pointer;
+}
+
+#userCards{
+  margin:50px
+
 }
