@@ -4,15 +4,25 @@ const isLoggedOut = require("../middleware/isLoggedOut");
 const isLoggedIn = require("../middleware/isLoggedIn");
 const User = require("../models/User.model");
 const Language = require("../models/Language.model");
-const Session = require("../models/Session.model");
+const Session = require("../models/UserSession.model");
 //Handles the user photos
 const fileUploader = require("../config/cloudinary.config");
 
-router.get("/:id/dashboard-users", isLoggedIn, async (req, res) => {
+router.get("/:id/dashboard/:language", isLoggedIn, async (req, res) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
-    res.render("users/dashboard-users", { user });
+    const { language } = req.params;
+    const allUsers = await User.find();
+
+    let users = [];
+
+    allUsers.map((user) => {
+      if (user.nativeLanguage === language) {
+        users.push(user);
+      }
+    });
+
+    res.render("users/dashboard-users", { users });
   } catch (error) {
     console.log(error);
     next(error);
@@ -45,7 +55,7 @@ router.get("/edit-profile/:id", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
-    console.log(user)
+    console.log(user);
     res.render("users/edit-profile", { user });
   } catch (error) {
     console.log(error);
@@ -60,7 +70,7 @@ router.post(
   async (req, res, next) => {
     try {
       const { id } = req.params;
-      const { name, username, password } = req.body;
+      const { email, username } = req.body;
       let image;
       if (req.file) {
         image = req.file.path;
@@ -70,10 +80,10 @@ router.post(
       }
       let updatedUser = await User.findByIdAndUpdate(
         id,
-        { name, username, password, image },
+        { email, username, image },
         { new: true }
       );
-      res.redirect("/homepage");
+      res.redirect(`/users/${id}/profile`);
     } catch (error) {
       console.log(error);
       next(error);

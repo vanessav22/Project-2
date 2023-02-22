@@ -1,19 +1,13 @@
 const { Schema, model } = require("mongoose");
 
 // TODO: Please make sure you edit the User model to whatever makes sense in this case
-const sessionSchema = new Schema(
+const userSessionSchema = new Schema(
   {
     sentence: {
       type: String,
       required: true,
-      unique: true,
     },
-    answer: [
-      {
-        /* user: userId, */
-        answer: String,
-      },
-    ],
+    answer: [String],
     users: [
       {
         type: Schema.Types.ObjectId,
@@ -26,12 +20,7 @@ const sessionSchema = new Schema(
         ref: "Language",
       },
     ],
-    chat: [
-      {
-        /* user: userId, */
-        text: String,
-      },
-    ],
+    chat: [String],
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
@@ -39,6 +28,6 @@ const sessionSchema = new Schema(
   }
 );
 
-const Session = model("Session", sessionSchema);
+const UserSession = model("UserSession", userSessionSchema);
 
-module.exports = Session;
+module.exports = UserSession;

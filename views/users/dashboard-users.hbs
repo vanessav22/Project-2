@@ -14,20 +14,20 @@
   </div>
 </nav>
 
-{{#each user}}
-
-{{/each}}
-
+{{#each users}}
   <div class="card">
-  <a href="../../session/start-session"><div class="card-img"></div></a>
+  <a href="/session/{{_id}}/start-session"><div class="card-img"></div></a>
   <div class="card-info">
-    <p class="text-title">{{name}}</p>
+    <p class="text-title">{{username}}</p>
     <p class="text-body">Learning {{language}}</p>
   </div>
   <div class="card-footer">
   <span class="text-title">{{nativeLanguage}}</span>
   </div>
-</div></div>
+</div>
+{{/each}}
+
+</div>
 
 
 

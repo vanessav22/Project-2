@@ -11,7 +11,7 @@ const saltRounds = 10;
 // Require the User model in order to interact with the database
 const User = require("../models/User.model");
 const Language = require("../models/Language.model");
-const Session = require("../models/Session.model");
+const Session = require("../models/UserSession.model");
 
 // Require necessary (isLoggedOut and isLiggedIn) middleware in order to control access to specific routes
 const isLoggedOut = require("../middleware/isLoggedOut");
