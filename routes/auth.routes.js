@@ -139,6 +139,8 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
           // Add the user object to the session object
           req.session.currentUser = user.toObject();
+          req.app.locals.loggedIn = true
+          req.app.locals.loggedUserId = user._id
           // Remove the password field
           delete req.session.currentUser.password;
 
@@ -155,7 +157,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
       res.status(500).render("auth/logout", { errorMessage: err.message });
       return;
     }
-
+    req.app.locals.loggedIn = false
     res.redirect("/");
   });
 });
