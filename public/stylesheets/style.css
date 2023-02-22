@@ -1,14 +1,13 @@
 * {
   text-decoration: none;
-  font-family: sans-serif;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-weight: medium;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
-
 }
 
 body {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("/images/pexels-francesco-ungaro-281260.jpg");
   background-size: 100%;
   color: white;
@@ -16,10 +15,13 @@ body {
 
 #signUp {
   display: flex;
-text-align: end;
-justify-content: space-evenly;
-  color: #252525;
+  font-size: 25px;
+  justify-content: space-between;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: #383838;
   margin-top: 30px;
+  margin: bottom 40px;
 }
 
 #landingPage {
@@ -29,8 +31,7 @@ justify-content: space-evenly;
 
 .landingHeader {
   font-size: 35px;
-  font-family: sans-serif;
-  font-weight: 500;
+  font-weight: lighter;
   line-height: 5px;
   margin: 30px;
   color: rgb(226, 34, 34);
@@ -58,7 +59,7 @@ justify-content: space-evenly;
 }
 
 #signup-form {
-   text-align: center;
+  text-align: center;
   color: white;
   font-size: 20px;
   line-height: 10px;
@@ -157,7 +158,7 @@ h4 {
   padding: 0;
   padding-top: 20px;
   margin: 0;
-  color:black;
+  color: rgb(43, 43, 43);
   font-weight: normal;
 }
 
@@ -175,8 +176,8 @@ h4 {
   padding-bottom: 30px;
 }
 
-a{
-  color: black;
+a {
+  color: rgb(43, 43, 43);
   font-weight: normal;
 }
 .navbar-nav {
@@ -194,23 +195,26 @@ a{
 footer {
   text-align: center;
   padding: 3px;
-  background-color:green;
+  background-color: green;
   color: white;
-  position:absolute;
-   bottom:0;
-   width:100%;
-   height:20px;   /* Height of the footer */
-  
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20px; /* Height of the footer */
 }
 
-.logoutButton{
- color: black;
- font-size: 20px;
- font-weight: normal;
+.logoutButton {
+  color: rgb(43, 43, 43);
+  font-size: 20px;
+  font-weight: normal;
   width: 120px;
   margin-top: 22px;
   text-decoration: none;
   background-color: whitesmoke;
   border-radius: 3px;
   border: none;
+}
+
+.logoutButton:hover {
+  cursor: pointer;
 }
