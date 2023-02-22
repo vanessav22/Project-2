@@ -10,7 +10,7 @@ const sessionSchema = new Schema(
     },
     answer: [
       {
-        user: userId,
+        /* user: userId, */
         answer: String,
       },
     ],
@@ -20,9 +20,15 @@ const sessionSchema = new Schema(
         ref: "User",
       },
     ],
+    language: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: "Language",
+      },
+    ],
     chat: [
       {
-        user: userId,
+        /* user: userId, */
         text: String,
       },
     ],

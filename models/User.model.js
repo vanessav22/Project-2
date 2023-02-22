@@ -20,12 +20,19 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    nativeLanguage: {
+      type:String,
+  },
+    image: {
+      type:String,
+      default:'https://as2.ftcdn.net/v2/jpg/03/03/62/45/1000_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg',
+    }
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
-    timestamps: true,
+    timestamps: true
   }
-);
+)
+
 
 const User = model("User", userSchema);
 

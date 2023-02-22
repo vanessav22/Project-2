@@ -1,14 +1,22 @@
-
- 
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+<nav>
       <div class="navbar-nav">
-        <a class="nav-link" href="">Friends</a>
-        <a class="nav-link" href="">Progress</a>
-        <a class="nav-link" href="#">Profile</a>
-        <a class="nav-link" href="#">Logout</a>
+        <a class="nav-link" href="friends">Friends</a>
+        <a class="nav-link" href="progress">Progress</a>
+        <a class="nav-link" href="profile">Profile</a>
+        <form action="/auth/logout" method="get">
+        <button type="submit"  class="logoutButton">Log Out</button>
+        </form>
       </div>
-    </div>
-  </div>
 </nav>
+
+<section id="dashboardLanguages">
+<div id="languageNav">
+  <h4>I want to learn...</h4>
+  <a href="dashboard-users">🇫🇷 French</a>
+  <a href="dashboard-users">🇹🇷 Turkish</a>
+  <a href="dashboard-users">🇩🇪 German </br> </a> 
+  <a href="dashboard-users">🇵🇹 Portuguese</a>
+  <a href="dashboard-users">🇮🇹 Italian</a>
+  <a href="dashboard-users">🇪🇸 Spanish</a>
+</div>
+</section>

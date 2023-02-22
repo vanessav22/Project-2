@@ -1,3 +1,16 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav>
+      <div class="navbar-nav">
+        <a class="nav-link" href="friends">Friends</a>
+        <a class="nav-link" href="progress">Progress</a>
+        <a class="nav-link" href="profile">Profile</a>
+        <form action="/auth/logout" method="get">
+        <button type="submit" class="logoutButton">Log Out</button>
+        </form>
+      </div>
+</nav>
+
+
 {{#each user}}
 <p>XP: {{xp}} </p>
 <p>You completed {{session}} sessions already!</p>
