@@ -5,7 +5,6 @@ const router = express.Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 
-
 // How many rounds should bcrypt run the salt (default - 10 rounds)
 const saltRounds = 10;
 
@@ -25,9 +24,9 @@ router.get("/signup", isLoggedOut, (req, res) => {
 
 // POST /auth/signup
 router.post("/signup", isLoggedOut, (req, res) => {
-  const {username, email, password, nativeLanguage} = req.body;
+  const { username, email, password, nativeLanguage } = req.body;
 
-/*   let image 
+  /*   let image 
   if  */
 
   // Check that username, email, and password are provided
@@ -65,7 +64,12 @@ router.post("/signup", isLoggedOut, (req, res) => {
     .then((salt) => bcrypt.hash(password, salt))
     .then((hashedPassword) => {
       // Create a user and save it in the database
-      return User.create({ username, email, password: hashedPassword, nativeLanguage });
+      return User.create({
+        username,
+        email,
+        password: hashedPassword,
+        nativeLanguage,
+      });
     })
     .then((user) => {
       res.redirect("/auth/login");
