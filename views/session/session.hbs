@@ -1,6 +1,13 @@
+
+
 <section id="sessionBody">
 
-<h2>Example sentence to translate</h2>
+<h2>You are in the following scenario... Try to say it in the language you're trying to learn!</h2>
+{{randomSentence}}
+<br></br>
+<hr></hr>
+<br></br>
+
 
 {{#if findSession}}
   {{#each findSession.chat}}
@@ -14,10 +21,12 @@
 
   </textarea>
 
-  <button type="Submit">Submit Answer!</button>
+<div id= "sessionButtons">
+  <button type="Submit" id="submitButton">Submit Answer!</button>
 </form>
 
 <form action="/session/{{findSession._id}}/start-session/delete" method="post">
-<button type="Submit">Leave Session</button>
+<button type="Submit" id="leaveSessionButton">Leave Session</button >
+</div>
 </form>
 </section>

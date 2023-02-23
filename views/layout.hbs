@@ -16,11 +16,9 @@
           href="/users/{{loggedUserId}}/dashboard"
         >Dashboard</a>
         <a class="nav-link" href="/users/{{loggedUserId}}/friends">Friends</a>
-        <a class="nav-link" href="/users/{{loggedUserId}}/progress">Progress</a>
         <a class="nav-link" href="/users/{{loggedUserId}}/profile">Profile</a>
         <a class="nav-link" href="/auth/logout">Logout</a>
       {{else}}
-        <a class="nav-link" href="/">Home</a>
         <a class="nav-link" href="/auth/login">Login</a>
         <a class="nav-link" href="/auth/signup">Sign-up</a>
       {{/if}}
