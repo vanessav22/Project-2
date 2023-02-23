@@ -1,55 +1,61 @@
 <div id="login-form">
-  <h2>Login</h2>
+
   <br /><br />
-  <form
-    action="/auth/login"
-    method="POST"
-    class="row g-3 needs-validation"
-  >
-    <div class="col-md-4">
-      <label for="validationCustomUsername" class="form-label">Email: </label>
-      <input
-        type="email"
-        name="email"
-        class="form-control"
-        id="validationCustomUsername"
-        required
-      />
-    </div>
-    <br /><br />
-    <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Username: </label>
-      <input
-        type="text"
-        name="username"
-        class="form-control"
-        id="validationCustom01"
-        required
-      />
+  <form action="/auth/login" method="POST" class="row g-3 needs-validation">
+    
+    <div class="card text-center card2">
+      <div class="card-header">
+        <h2>Login</h2>
+      </div>
+      <div class="card-body">
+        <div class="col-md-5">
+          <label for="validationCustomUsername" class="form-label">Email
+          </label>
+          <br /><br />
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="validationCustomUsername"
+            required
+          />
+        </div>
+        <br /><br />
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Username </label>
+          <br /><br />
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            id="validationCustom01"
+            required
+          />
 
+        </div>
+        <br /><br />
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Password </label>
+          <br /><br />
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="validationCustom01"
+            value=""
+            required
+          />
+        </div>
+        <br /><br />
+        <div class="col-12">
+          <button class="btn btn-primary Submit" type="submit">Submit</button>
+        </div>
+      </div>
     </div>
-    <br /><br />
-    <div class="col-md-4">
-      <label for="validationCustom01" class="form-label">Password: </label>
-      <input
-        type="password"
-        name="password"
-        class="form-control"
-        id="validationCustom01"
-        value=""
-        required
-      />
-       <br /><br />
-       <div class="col-12">
-      <button class="btn btn-primary Submit" type="submit">Submit</button>
-    </div>
+
   </form>
-  </div>
-    </div>
-    <br /><br />
-
-
-  {{#if errorMessage}}
-    <p class="error">{{errorMessage}}</p>
-  {{/if}}
 </div>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}
