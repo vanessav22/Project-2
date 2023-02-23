@@ -206,7 +206,8 @@ footer {
   display: flex;
   flex-direction: row;
   margin: 50px;
-  padding: 30px;}
+  padding: 30px;
+}
 
 #progressSection {
   text-align: center;
@@ -249,19 +250,23 @@ footer {
   }
 
 #submitButton {
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
   border-radius: 10px;
   background-color: white;
   border: none;
+  width: 150px;
+  height: auto;
 }
 
 #leaveSessionButton {
-  padding: 20px;
+  padding: 10px;
   font-weight: bold;
   border-radius: 10px;
   background-color: white;
   border: none;
+  width: 150px;
+  height: auto;
 }
 
 #addFriendButton{

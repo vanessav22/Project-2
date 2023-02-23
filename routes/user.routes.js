@@ -94,7 +94,7 @@ router.post("/:id/add-friends", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const myId = req.session.currentUser._id;
-    const user = await User.findByIdAndUpdate(myId, { $push: { friends: id } });
+    if(!friends.includes(id)) await User.findByIdAndUpdate(myId, { $push: { friends: id } });
 
     res.redirect(`/users/${myId}/dashboard`);
   } catch (error) {
