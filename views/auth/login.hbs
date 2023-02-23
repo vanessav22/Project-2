@@ -1,24 +1,68 @@
-<div id="login-form">
-  <h2>Log In</h2>
-  <form action="/auth/login" method="POST">
+<div id="login-form" >
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+  <br /><br />
+  <form action="/auth/login" method="POST" class="row g-3 needs-validation">
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
+    
+    <div class="card text-center card2">
+      
+      <div class="card-header">
+        
+        <br /><br />
+        <h2  style="color: white">Login</h2>
+      </div>
+     
+      <br /><br />
+      <div class="card-body">
 
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
+        <div class="col-md-5">
+          <label for="validationCustomUsername" class="form-label">Email
+          </label>
+          <br /><br />
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="validationCustomUsername"
+            required
+          />
+        </div>
+        <br /><br />
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Username </label>
+          <br /><br />
+          <input
+            type="text"
+            name="username"
+            class="form-control"
+            id="validationCustom01"
+            required
+          />
 
-    <button type="submit">Log In</button>
+        </div>
+        <br /><br />
+        <div class="col-md-4">
+          <label for="validationCustom01" class="form-label">Password </label>
+          <br /><br />
+          <input
+            type="password"
+            name="password"
+            class="form-control"
+            id="validationCustom01"
+            value=""
+            required
+          />
+        </div>
+        <br /><br />
+        <div class="col-12">
+          <button class="btn btn-primary Submit" type="submit">Submit</button>
+        </div>
+      </div>
+    </div>
 
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
   </form>
 </div>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}

@@ -20,9 +20,18 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    
+    nativeLanguage: {
+      type: String,
+    },
+    friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
+    image: {
+      type:String,
+      default:"https://res.cloudinary.com/dmm8iusle/image/upload/v1677086060/istockphoto-1125089587-170667a_gh0zbo.jpg",
+    }
+  
   },
   {
-    // this second object adds extra properties: `createdAt` and `updatedAt`
     timestamps: true,
   }
 );

@@ -1,1 +1,22 @@
-<h2>edit-profile</h2>
+<section id="editSection">
+  <div id="login-form">
+<h2 style="color: white;">Edit Profile</h2>
+   <br /><br />
+<form action="/users/edit-profile/{{user._id}}" method="post" enctype="multipart/form-data">
+
+  <label for="email">New Email: </label>
+  <input type="email" name="email" id="email" value="{{user.email}}" />
+   <br /><br />
+
+  <label for="username">New Username: </label>
+  <input type="text" name="username" id="username" value="{{user.username}}" />
+   <br /><br />
+
+  </textarea>
+  <div class="mb-3">
+    <input type="file" name="image" value="image" class="form-control" aria-label="file example" required>
+  </div>
+   <br /><br />
+
+  <button type="submit">Edit</button>
+</form>

@@ -1,0 +1,19 @@
+{{#each friend.friends}}
+  <section id="userCards">
+
+    <div class="card">
+
+      <a href="/session/{{_id}}/start-session"><div class="card-img" style="text-align: center;">Click to start practicing!</div></a>
+      <div class="card-info">
+        <p class="text-title" style="text-align: center;">{{username}}</p>
+        {{!-- <p class="text-body">Learning {{friends.0.}}</p> --}}
+      </div>
+
+      <div class="card-footer">
+        <span class="text-title">{{nativeLanguage}} Speaker</span>
+
+      </div>
+    </div>
+
+  </section>
+{{/each}}

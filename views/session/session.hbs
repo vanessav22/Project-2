@@ -1,0 +1,32 @@
+
+
+<section id="sessionBody">
+
+<h2 style="color: white;">You are in the following scenario... Try to say it in the language you're trying to learn!</h2>
+{{randomSentence}}
+<br></br>
+<hr></hr>
+<br></br>
+
+
+{{#if findSession}}
+  {{#each findSession.chat}}
+    <p>{{this}}</p>
+  {{/each}}
+{{/if}}
+
+<form action="/session/{{otherUserId}}/start-session" method="post">
+
+  <textarea name="sentence" id="sentence" cols="80" rows="15">
+
+  </textarea>
+
+<div id= "sessionButtons">
+  <button type="Submit" id="submitButton">Submit Answer!</button>
+</form>
+
+<form action="/session/{{findSession._id}}/start-session/delete" method="post">
+<button type="Submit" id="leaveSessionButton">Leave Session</button >
+</div>
+</form>
+</section>

@@ -1,24 +1,86 @@
-<div id="form">
-  <h2>Sign Up</h2>
-  <form action="/auth/signup" method="POST">
+<div id="signup-form">
 
-    <label> Username
-      <input type="text" name="username" placeholder="Your username" />
-    </label>
+  <form
+    action="/auth/signup"
+    method="POST"
+    class="row g-3 needs-validation"
+    id="signup-form"
+  >
+    <div class="card text-center card3">
+      <div class="card-header">
+        <br /><br />
+        <h2 style="color: white">Sign-up</h2>
+      </div>
+    
+      <br><br>
+      <div class="card-body">
+        <div class="col-md-5">
+          <label for="validationCustomUsername" class="form-label">Email
+          </label>
+          <br /><br />
+          <input
+            type="email"
+            name="email"
+            class="form-control"
+            id="validationCustomUsername"
+            required
+          />
+        </div>
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Username </label>
+        <br /><br />
+        <input
+          type="text"
+          name="username"
+          class="form-control"
+          id="validationCustom01"
+          required
+        />
 
-    <label> Email
-      <input type="email" name="email" placeholder="Your email" />
-    </label>
-
-    <label> Password
-      <input type="password" name="password" placeholder="Your password" />
-    </label>
-
-    <button type="submit">Sign Up</button>
-
-
-    {{#if errorMessage}}
-      <p class="error">{{errorMessage}}</p>
-    {{/if}}
+      </div>
+      <br /><br />
+      <div class="col-md-4">
+        <label for="validationCustom01" class="form-label">Password </label>
+        <br /><br />
+        <input
+          type="password"
+          name="password"
+          class="form-control"
+          id="validationCustom01"
+          value=""
+          required
+        />
+      </div>
+      <br /><br />
+      <div class="col-md-3">
+        <label for="validationServer04" class="form-label">Native Language:
+        </label>
+        <select
+          name="nativeLanguage"
+          class="form-select is-invalid"
+          id="validationServer04"
+          aria-describedby="validationServer04Feedback"
+          required
+        >
+          <option selected disabled value="">Choose...</option>
+          <option>Portuguese</option>
+          <option>German</option>
+          <option>Turkish</option>
+          <option>Italian</option>
+          <option>French</option>
+          <option>Spanish</option>
+        </select>
+      </div>
+      <br /><br />
+      <div class="col-12">
+        <button class="btn btn-primary" type="submit">Sign Up</button>
+      </div>
+    </div>
   </form>
 </div>
+
+{{#if errorMessage}}
+  <p class="error">{{errorMessage}}</p>
+{{/if}}
