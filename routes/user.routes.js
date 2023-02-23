@@ -40,9 +40,9 @@ router.get("/:id/profile", isLoggedIn, async (req, res) => {
   }
 });
 
-router.get("/:id/dashboard", isLoggedIn, async (req, res) => {
+router.get("/:id/dashboard", isLoggedIn, async (req, res, next) => {
   try {
-    const { id } = req.params;
+    const id = req.session.currentUser._id;
     const user = await User.findById(id);
     res.render("users/dashboard", { user });
   } catch (error) {
@@ -91,10 +91,23 @@ router.post(
   }
 );
 
-router.get("/:id/friends", isLoggedIn, async (req, res, next) => {
+router.post("/:id/add-friends", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
-    const user = await User.findById(id);
+    const myId = req.session.currentUser._id;
+    const user = await User.findByIdAndUpdate(myId, { $push: { friends: id } });
+
+    res.redirect(`/users/${myId}/dashboard`);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.get("/:id/friends", isLoggedIn, async (req, res, next) => {
+  const { id } = req.params;
+  const user = await User.findById(id).populate("friends");
+  try {
     res.render("users/friends", { user });
   } catch (error) {
     console.log(error);
@@ -106,7 +119,17 @@ router.get("/:id/progress", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const user = await User.findById(id);
+
     res.render("users/progress", { user });
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
+
+router.post("users/:id/", isLoggedIn, async (req, res, next) => {
+  try {
+    res.redirect(`/users/${id}/profile`);
   } catch (error) {
     console.log(error);
     next(error);

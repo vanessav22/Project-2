@@ -21,18 +21,19 @@ const userSchema = new Schema(
       required: true,
     },
     nativeLanguage: {
-      type:String,
-  },
+      type: String,
+    },
+    friends: [{ type: Schema.Types.ObjectId, ref: "User" }],
     image: {
-      type:String,
-      default:'https://as2.ftcdn.net/v2/jpg/03/03/62/45/1000_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg',
-    }
+      type: String,
+      default:
+        "https://as2.ftcdn.net/v2/jpg/03/03/62/45/1000_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg",
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
-)
-
+);
 
 const User = model("User", userSchema);
 

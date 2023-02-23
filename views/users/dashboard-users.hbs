@@ -3,11 +3,18 @@
   <div class="card">
   <a href="/session/{{_id}}/start-session"><div class="card-img"></div></a>
   <div class="card-info">
-    <p class="text-title">{{username}}</p>
-    <p class="text-body">Learning {{language}}</p>
+    <p class="text-title" style="text-align: center;">{{username}}</p>
+
+
+<form action="/users/{{_id}}/add-friends" method="post">
+<button type="submit">Add as friend</button>
+</form>
+ 
+
+
   </div>
   <div class="card-footer">
-  <span class="text-title">{{nativeLanguage}}</span>
+  <span class="text-title"> {{nativeLanguage}} Speaker</span>
   </div>
 </div>
 {{/each}}
