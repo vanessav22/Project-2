@@ -25,7 +25,7 @@ const userSchema = new Schema(
   },
     image: {
       type:String,
-      default:'https://as2.ftcdn.net/v2/jpg/03/03/62/45/1000_F_303624505_u0bFT1Rnoj8CMUSs8wMCwoKlnWlh5Jiq.jpg',
+      default:"https://res.cloudinary.com/dmm8iusle/image/upload/v1677086060/istockphoto-1125089587-170667a_gh0zbo.jpg",
     }
   },
   {

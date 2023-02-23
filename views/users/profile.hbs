@@ -1,15 +1,17 @@
 
 
 <section id="profileSection">
-<a href="/users/edit-profile/{{user._id}}">Edit Profile</a>
 
 
-{{!-- <img src="{{imgUrl}}" alt="userPic"> --}}
-<img src="{{user.image}}" alt="profile">
-<p>{{user.username}}</p>
-<p>{{user.email}}</p>
-{{!-- <p>{{friends.length()}}</p> --}}
-
+<div class="card card1" style="width: 20rem;">
+  {{!-- <img src="{{imgUrl}}" alt="userPic"> --}}
+<img class="UserImage" src="{{user.image}}" alt="profile">
+  <div class="card-body">
+    <h2 class="card-title"> {{user.username}}</h2>
+    <p class="card-text"><p>{{user.email}}</p>
+    <a href="/users/edit-profile/{{user._id}}">Edit Profile</a>
+  </div>
+</div>
 
 
 </section>
