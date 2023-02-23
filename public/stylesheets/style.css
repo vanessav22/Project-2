@@ -36,7 +36,6 @@ body {
 .landingHeader {
   font-size: 35px;
   font-weight: lighter;
-  line-height: 5px;
   margin: 30px;
   color: rgb(226, 34, 34);
 }
@@ -160,7 +159,10 @@ a {
   font-weight: normal;
 }
 .navbar-nav {
-  justify-content: space-evenly;
+  padding-left: 50px;
+  padding-right: 50px;
+  padding-bottom: 10px;
+  justify-content: space-between;
   margin: 0;
   align-items: center;
   font-size: 20px;
@@ -168,6 +170,9 @@ a {
   background-color: rgb(234, 239, 240);
   height: 60px;
   border-bottom: 10px;
+  border-bottom: rgb(58, 58, 205) groove;
+  
+  
 }
 
 footer {
@@ -199,11 +204,9 @@ footer {
 
 #userCards {
   display: flex;
-  align-items: start;
   flex-direction: row;
   margin: 50px;
-  padding: 30px;
-}
+  padding: 30px;}
 
 #progressSection {
   text-align: center;
@@ -265,7 +268,6 @@ footer {
   border: 0;
   background-color: white;
   border-radius: 10px;
-  margin-left: 40px;
 }
 
 
@@ -306,3 +308,26 @@ h2 {
     font-size: larger;
     line-height: 60px;
   }
+
+  #logo{
+    width: 100px;
+    float: right;
+  }
+
+.paper-image {
+animation: plan 2s linear infinite;
+}
+
+@keyframes plan {
+10%{
+   transform: translateX (0px) translateY (0px);
+}
+
+30% {
+  transform: translateX (100px) translateY (0px);
+}
+100% {
+  transform: translateX (300px) translateY (-200px);
+}
+
+}

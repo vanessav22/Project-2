@@ -1,19 +1,17 @@
-{{#each friend.friends}}
   <section id="userCards">
+{{#each friend.friends}}
 
-    <div class="card">
-
-      <a href="/session/{{_id}}/start-session"><div class="card-img" style="text-align: center;">Click to start practicing!</div></a>
+    <div class="card" style="justify-content: center; text-align:center">
+      <a href="/session/{{_id}}/start-session">
+      <img class="UserImage" src="{{image}}" alt="profile">
       <div class="card-info">
         <p class="text-title" style="text-align: center;">{{username}}</p>
-        {{!-- <p class="text-body">Learning {{friends.0.}}</p> --}}
       </div>
-
       <div class="card-footer">
         <span class="text-title">{{nativeLanguage}} Speaker</span>
 
       </div>
     </div>
 
-  </section>
 {{/each}}
+  </section>
