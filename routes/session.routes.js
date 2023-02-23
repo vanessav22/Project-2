@@ -12,10 +12,10 @@ const { findOneAndDelete } = require("../models/User.model");
 
       const challengeSeq = [
         "You are walking and exploring the city, but suddenly you feel hungry and you want to buy something to eat. You would like to buy a croissant with butter and one orange juice. You also would like to know how much will cost.",
-        "You are entering a bakery and you would like to get some bread and a small coffee with milk to take away",
-        "You need to ask somebody for directions to get to the mainstation and would like to know if you can make there on foot",
-        "You are asking somebody about whether there are any events taking place the upcoming Friday",
-        "You are asking somebody how their day has been and whether they have any plans for the evening"
+        "You are entering a bakery and you would like to get some bread and a small coffee with milk to take away.",
+        "You need to ask somebody for directions to get to the mainstation and would like to know if you can make there on foot.",
+        "You are asking somebody about whether there are any events taking place the upcoming Friday.",
+        "You are asking somebody how their day has been and whether they have any plans for the evening."
       ];
       
 

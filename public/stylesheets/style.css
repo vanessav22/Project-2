@@ -86,7 +86,7 @@ body {
 }
 
 .card-img {
-  background-color: white;
+  background-color: rgb(223, 223, 223);
   height: 40%;
   width: 100%;
   border-radius: 0.5rem;
@@ -109,6 +109,7 @@ svg {
   align-items: center;
   padding-top: 10px;
   border-top: 1px solid grey;
+  text-align: center;
 }
 
 /*Text*/
@@ -197,6 +198,9 @@ footer {
 }
 
 #userCards {
+  display: flex;
+  align-items: start;
+  flex-direction: row;
   margin: 50px;
   padding: 30px;
 }
@@ -230,6 +234,9 @@ footer {
   margin-bottom: 10px; /* Added */
   width: 300px;
   height: auto;
+   align-items: center;
+     text-align: center;
+
 }
   #sessionButtons {
     display: flex;
@@ -253,3 +260,49 @@ footer {
   background-color: white;
   border: none;
 }
+
+#addFriendButton{
+  border: 0;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 40px;
+}
+
+
+h2 {
+  color:black;
+  }
+  
+  .card4 {
+    background-color: rgba(84, 236, 150, 0.349);
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+    width: 30vw; 
+    height: 40vh;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 10px 20px rgba(0,0,0,0.23);
+    font-style: normal;
+    font-size:large;
+     align-items: center;
+     text-align: center;
+
+  }
+  
+  .card-total-container{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+
+     text-align: center;
+  
+  }
+  
+  .card-title {
+    text-align: center;
+    padding-top: 3vh;
+  }
+  
+  .languages-area{
+    font-size: larger;
+    line-height: 60px;
+  }
