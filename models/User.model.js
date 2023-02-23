@@ -20,6 +20,8 @@ const userSchema = new Schema(
       type: String,
       required: true,
     },
+    progress: Number, 
+    
     nativeLanguage: {
       type: String,
     },
