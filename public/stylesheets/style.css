@@ -1,12 +1,14 @@
 * {
   text-decoration: none;
-  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-family:sans-serif;
   font-weight: light;
   font-weight: medium;
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
 }
+
+
 
 body {
   background-image: url("/images/pexels-francesco-ungaro-281260.jpg");
@@ -65,7 +67,7 @@ body {
   color: white;
   font-size: 20px;
   line-height: 10px;
-  margin-top: 10%;
+  margin-top: 5%;
   display: flex;
   flex-direction: column;
   padding-bottom: 20px;
@@ -75,11 +77,12 @@ body {
   width: 190px;
   height: 254px;
   padding: 0.8em;
-  background: lightgray;
+  background-color: rgba(84, 236, 150, 0.349);
   position: relative;
   overflow: visible;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 10px 20px rgba(0,0,0,0.23);
   border-radius: 12px;
+  margin-bottom: 10px;
 }
 
 .card-img {
@@ -142,16 +145,6 @@ svg {
   background-color: #ffcaa6;
 }
 
-#languageNav {
-  margin-top: 60px;
-  line-height: 50px;
-  justify-content: space-around;
-  text-decoration: none;
-  font-size: 20px;
-  width: fit-content;
-  color: white;
-  padding: 40px;
-}
 h4 {
   padding: 0;
   padding-top: 20px;
@@ -160,17 +153,6 @@ h4 {
   font-weight: normal;
 }
 
-#dashboardLanguages {
-  justify-content: space-around;
-  background-color: rgb(255, 255, 255);
-  text-align: center;
-  width: 400px;
-  height: 20%;
-  margin-top: 300px;
-  margin-left: 35%;
-  border-radius: 12px;
-  padding: 40px;
-}
 
 a {
   color: rgb(43, 43, 43);
@@ -191,14 +173,13 @@ a {
 
 footer {
   text-align: right;
-  padding: 3px;
   border-radius: 10%;
   color: white;
   position: absolute;
-  bottom: 0;
+  bottom: 1%;
   width: 100%;
   height: 20px; /* Height of the footer */
-
+ 
 }
 
 .logoutButton {
@@ -238,23 +219,53 @@ footer {
   margin-top: 60px;
 }
 
-<<<<<<< HEAD
 .UserImage {
  height: 100px;
 
 }
 
 .card1, .card2, .card3 {
-  background-color: rgb(168, 212, 212);
+  background-color: rgba(84, 236, 150, 0.349);
   margin: 0 auto; /* Added */
   float: none; /* Added */
   margin-bottom: 10px; /* Added */
   width: 300px; 
   height: auto;
-
+  box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 10px 20px rgba(0,0,0,0.23);
+}
   
-=======
 #editSection{
   display: block;
->>>>>>> 0243775cfca9b2acc6d4d570373df555b80aeb97
+}
+
+h2 {
+color:black;
+}
+
+.card4 {
+  background-color: rgba(84, 236, 150, 0.349);
+  margin: 0 auto; /* Added */
+  float: none; /* Added */
+  margin-bottom: 10px; /* Added */
+  width: 30vw; 
+  height: 40vh;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.16), 0 10px 20px rgba(0,0,0,0.23);
+  font-style: normal;
+  font-size:large;
+}
+
+.card-total-container{
+  display: flex;
+  height: 80vh;
+  align-items: center;
+
+}
+
+.card-title {
+  text-align: center;
+  padding-top: 3vh;
+}
+
+.languages-area{
+  font-size: larger;
 }
