@@ -238,6 +238,7 @@ footer {
   margin-top: 60px;
 }
 
+<<<<<<< HEAD
 .UserImage {
  height: 100px;
 
@@ -252,4 +253,8 @@ footer {
   height: auto;
 
   
+=======
+#editSection{
+  display: block;
+>>>>>>> 0243775cfca9b2acc6d4d570373df555b80aeb97
 }

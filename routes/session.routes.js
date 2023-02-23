@@ -8,6 +8,7 @@ const UserSession = require("../models/UserSession.model");
 
 //Handles the user photos
 const fileUploader = require("../config/cloudinary.config");
+const { findOneAndDelete } = require("../models/User.model");
 
 router.get(
   "/:otherUserId/start-session",
@@ -30,7 +31,7 @@ router.get(
         res.render("session/session", { otherUserId });
       }
 
-      res.render("session/session", { otherUserId, findSession });
+      res.render("session/session", { otherUserId, findSession, thisUserId });
     } catch (error) {
       console.log(error);
       next(error);
@@ -67,5 +68,17 @@ router.post(
     }
   }
 );
+
+router.post("/:id/start-session/delete", isLoggedIn, async (req, res, next) => {
+  const { id } = req.params;
+  try {
+    const delSess = await UserSession.findByIdAndDelete(id);
+    console.log(delSess);
+    res.redirect(`/users/${id}/dashboard`);
+  } catch (error) {
+    console.log(error);
+    next(error);
+  }
+});
 
 module.exports = router;
