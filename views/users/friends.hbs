@@ -1,21 +1,19 @@
-<section id="userCards">
+{{#each friend.friends}}
+  <section id="userCards">
 
-{{user.friends.username}}
-    
-{{#each users}}
-  <div class="card">
-  <a href="/session/{{_id}}/start-session"><div class="card-img"></div></a>
-  <div class="card-info">
-    <p class="text-title">{{username}}</p>
-    <p class="text-body">Learning {{language}}</p>
-  </div>
-  <div class="card-footer">
-  <span class="text-title">{{nativeLanguage}}</span>
-  </div>
-</div>
+    <div class="card">
+
+      <a href="/session/{{_id}}/start-session"><div class="card-img"></div></a>
+      <div class="card-info">
+        <p class="text-title">{{username}}</p>
+        {{!-- <p class="text-body">Learning {{friends.0.}}</p> --}}
+      </div>
+
+      <div class="card-footer">
+        <span class="text-title">{{nativeLanguage}}</span>
+
+      </div>
+    </div>
+
+  </section>
 {{/each}}
-
-</div>
-
-</section>
-

@@ -105,9 +105,10 @@ router.post("/:id/add-friends", isLoggedIn, async (req, res, next) => {
 
 router.get("/:id/friends", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
-  const user = await User.findById(id).populate("friends");
+  const friend = await User.findById(id).populate("friends");
+  console.log(friend)
   try {
-    res.render("users/friends", { user });
+    res.render("users/friends", { friend });
   } catch (error) {
     console.log(error);
     next(error);

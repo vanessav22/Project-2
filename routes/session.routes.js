@@ -10,11 +10,21 @@ const UserSession = require("../models/UserSession.model");
 const fileUploader = require("../config/cloudinary.config");
 const { findOneAndDelete } = require("../models/User.model");
 
+      const challengeSeq = [
+        "You are walking and exploring the city, but suddenly you feel hungry and you want to buy something to eat. You would like to buy a croissant with butter and one orange juice. You also would like to know how much will cost.",
+        "You are entering a bakery and you would like to get some bread and a small coffee with milk to take away",
+        "You need to ask somebody for directions to get to the mainstation and would like to know if you can make there on foot",
+        "You are asking somebody about whether there are any events taking place the upcoming Friday",
+        "You are asking somebody how their day has been and whether they have any plans for the evening"
+      ];
+      
+
 router.get(
   "/:otherUserId/start-session",
   isLoggedIn,
   async (req, res, next) => {
     try {
+      let randomSentence = challengeSeq[Math.floor(Math.random() * 5)]; 
       const { otherUserId } = req.params;
       const thisUserId = req.session.currentUser._id;
 
@@ -31,7 +41,7 @@ router.get(
         res.render("session/session", { otherUserId });
       }
 
-      res.render("session/session", { otherUserId, findSession, thisUserId });
+      res.render("session/session", { otherUserId, findSession, thisUserId, randomSentence });
     } catch (error) {
       console.log(error);
       next(error);
@@ -51,6 +61,8 @@ router.post(
       const thisSession = await UserSession.findOne({
         users: { $in: [otherUserId, thisUserId] },
       });
+
+
 
       const chatArray = [...thisSession.chat, sentence];
 
