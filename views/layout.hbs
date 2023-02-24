@@ -19,11 +19,12 @@
         <a class="nav-link" href="/users/{{loggedUserId}}/profile">Profile</a>
         <a class="nav-link" href="/auth/logout">Logout</a>
         <img src="/images/1ae84899a7b5482795b713c8239825f8-PhotoRoom.png-PhotoRoom.png" alt="logo" id="logo">
-      {{else}}
+        {{/if}}
+      {{#if loggedOut}}
         <img src="/images/1ae84899a7b5482795b713c8239825f8-PhotoRoom.png-PhotoRoom.png" alt="logo" id="logo">
         <a class="nav-link" href="/auth/login">Login</a>
         <a class="nav-link" href="/auth/signup">Sign-up</a>
-      {{/if}}
+         {{/if}}
     </div>
   </nav>
 

@@ -24,6 +24,7 @@ router.get(
   isLoggedIn,
   async (req, res, next) => {
     try {
+      let counter = 1
       let randomSentence = challengeSeq[Math.floor(Math.random() * 5)]; 
       const { otherUserId } = req.params;
       const thisUserId = req.session.currentUser._id;
@@ -39,7 +40,8 @@ router.get(
         });
 
         res.render("session/session", { otherUserId });
-      }
+        counter += 1; 
+      }  
 
       res.render("session/session", { otherUserId, findSession, thisUserId, randomSentence });
     } catch (error) {

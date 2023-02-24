@@ -207,6 +207,7 @@ footer {
   flex-direction: row;
   margin: 50px;
   padding: 30px;
+  text-align: center;
 }
 
 #progressSection {

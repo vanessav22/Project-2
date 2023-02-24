@@ -75,7 +75,8 @@ router.post(
       if (req.file) {
         image = req.file.path;
       } else {
-        image ="https://res.cloudinary.com/dmm8iusle/image/upload/v1677086060/istockphoto-1125089587-170667a_gh0zbo.jpg";
+        image =
+          "https://res.cloudinary.com/dmm8iusle/image/upload/v1677086060/istockphoto-1125089587-170667a_gh0zbo.jpg";
       }
       let updatedUser = await User.findByIdAndUpdate(
         id,
@@ -94,9 +95,12 @@ router.post("/:id/add-friends", isLoggedIn, async (req, res, next) => {
   try {
     const { id } = req.params;
     const myId = req.session.currentUser._id;
-    if(!friends.includes(id)) await User.findByIdAndUpdate(myId, { $push: { friends: id } });
-
-    res.redirect(`/users/${myId}/dashboard`);
+    if (req.session.currentUser.friends.includes(id)) {
+      res.redirect(`/users/${myId}/dashboard`);
+    } else {
+      await User.findByIdAndUpdate(myId, { $push: { friends: id } });
+      res.redirect(`/users/${myId}/dashboard`);
+    }
   } catch (error) {
     console.log(error);
     next(error);
@@ -106,7 +110,7 @@ router.post("/:id/add-friends", isLoggedIn, async (req, res, next) => {
 router.get("/:id/friends", isLoggedIn, async (req, res, next) => {
   const { id } = req.params;
   const friend = await User.findById(id).populate("friends");
-  console.log(friend)
+  console.log(friend);
   try {
     res.render("users/friends", { friend });
   } catch (error) {
